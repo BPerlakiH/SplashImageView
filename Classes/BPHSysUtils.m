@@ -43,19 +43,19 @@ static BOOL _isActive;
 }
 
 + (BOOL) isPortrait {
-    return ![SysUtils isLandscape];
+    return ![BPHSysUtils isLandscape];
 }
 
 + (BOOL) isFourInchDisplay {
-    if([SysUtils isiPad]) return false;
+    if([BPHSysUtils isiPad]) return false;
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     CGFloat longestSide = MAX(screenSize.width, screenSize.height);
     return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && (568.0 <= longestSide));
 }
 
 + (NSString *) getDiplayKey {
-    NSString *key = [SysUtils isFourInchDisplay] ? @"screen4-" : @"screen3-";
-    key = [key stringByAppendingString: [SysUtils isLandscape] ? @"landscape" : @"portrait"];
+    NSString *key = [BPHSysUtils isFourInchDisplay] ? @"screen4-" : @"screen3-";
+    key = [key stringByAppendingString: [BPHSysUtils isLandscape] ? @"landscape" : @"portrait"];
     return key;
 }
 
@@ -69,7 +69,7 @@ static BOOL _isActive;
 
 + (float) getMaxDeviceHeight {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    if ([SysUtils isPortrait]) {
+    if ([BPHSysUtils isPortrait]) {
         return screenSize.height;
     } else {
         return screenSize.width;
@@ -78,7 +78,7 @@ static BOOL _isActive;
 
 + (float) getMaxDeviceWidth {
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
-    if ([SysUtils isPortrait]) {
+    if ([BPHSysUtils isPortrait]) {
         return screenSize.width;
     } else {
         return screenSize.height;
