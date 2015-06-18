@@ -4,7 +4,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "SplashImageView"
-  s.version      = "0.0.8"
+  s.version      = "0.0.9"
   s.summary      = "Extend your launch image with an imageView. Responsive to device rotations."
 
   s.description  = <<-DESC
@@ -17,13 +17,13 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author = "BPH"
   s.platform = :ios, "7.0"
-  s.source       = { :git => "https://github.com/BPerlakiH/SplashImageView.git", :tag => "0.0.8" }
+  s.source       = { :git => "https://github.com/BPerlakiH/SplashImageView.git", :tag => "0.0.9" }
   s.source_files  = "Classes", "Classes/**/*.{h,m}"
   s.exclude_files = "Classes/Exclude"
 
   s.frameworks = "Foundation"
   s.requires_arc = true
 
-  s.dependency "SysUtils"
+  s.dependency "SysUtils", "~> 0.0.1"
 
 end
