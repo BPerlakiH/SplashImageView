@@ -1,17 +1,16 @@
 //
-//  UIImage+Helper.m
-//  Postcards
+//  UIImage+BPHHelper.m
 //
-//  Created by Balazs on 19/05/2013.
-//  Copyright (c) 2013 PictureCabinet. All rights reserved.
+//  Created by BPH on 19/05/2013.
+//  Copyright (c) 2013 BPH. All rights reserved.
 //
 
 #ifndef DEGREES_TO_RADIANS
     #define DEGREES_TO_RADIANS(x) (M_PI * x / 180.0)
 #endif
-#import "UIImage+Helper.h"
+#import "UIImage+BPHHelper.h"
 
-@implementation UIImage (Helper)
+@implementation UIImage (BPHHelper)
 
 - (BOOL)isHF {
     if(self.size.height == 0) return false;

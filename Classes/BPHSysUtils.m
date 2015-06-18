@@ -1,14 +1,13 @@
 //
-//  SysUtils.m
-//  MemoryPrintsApp
+//  BPHSysUtils.m
 //
-//  Created by Balazs Perlaki-Horvath on 07/11/2012.
-//  Copyright (c) 2012 CabinetUK. All rights reserved.
+//  Created by BPH on 07/11/2012.
+//  Copyright (c) 2012 BPH. All rights reserved.
 //
 
-#import "SysUtils.h"
+#import "BPHSysUtils.h"
 
-@implementation SysUtils
+@implementation BPHSysUtils
 
 static BOOL _isActive;
 
@@ -49,7 +48,6 @@ static BOOL _isActive;
 
 + (BOOL) isFourInchDisplay {
     if([SysUtils isiPad]) return false;
-//    NSLog(@"screen bounds: %@", NSStringFromCGSize([UIScreen mainScreen].bounds.size));
     CGSize screenSize = [UIScreen mainScreen].bounds.size;
     CGFloat longestSide = MAX(screenSize.width, screenSize.height);
     return ([[UIDevice currentDevice] userInterfaceIdiom] == UIUserInterfaceIdiomPhone && (568.0 <= longestSide));
@@ -67,7 +65,6 @@ static BOOL _isActive;
 
 + (void) setApplicationActive:(BOOL)value {
     _isActive = value;
-//    DLog(@"%i", _isActive);
 }
 
 + (float) getMaxDeviceHeight {

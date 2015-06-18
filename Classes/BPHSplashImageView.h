@@ -1,9 +1,8 @@
 //
-//  SplashScreen.h
-//  Launch
+//  BPHSplashImageView.h
 //
-//  Created by Balazs Perlaki-Horvath on 18/06/2015.
-//  Copyright (c) 2015 Pogopost. All rights reserved.
+//  Created by BPH on 18/06/2015.
+//  Copyright (c) 2015 BPH. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>

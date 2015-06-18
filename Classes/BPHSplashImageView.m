@@ -1,14 +1,13 @@
 //
-//  SplashScreen.m
-//  Launch
+//  BPHSplashImageView.m
 //
-//  Created by Balazs Perlaki-Horvath on 18/06/2015.
-//  Copyright (c) 2015 Pogopost. All rights reserved.
+//  Created by BPH on 18/06/2015.
+//  Copyright (c) 2015 BPH. All rights reserved.
 //
 
 #import "BPHSplashImageView.h"
-#import "SysUtils.h"
-#import "UIImage+Helper.h"
+#import "BPHSysUtils.h"
+#import "UIImage+BPHHelper.h"
 
 @implementation BPHSplashImageView
 
@@ -21,13 +20,12 @@
 }
 
 - (void) onRotate {
-    DLog(@"");
     [self _setImage];
 }
 
 - (void) _setImage {
     NSString *name = [self _getSplashName];
-    if([SysUtils isLandscape] && ![SysUtils isiPad]) {
+    if([BPHSysUtils isLandscape] && ![BPHSysUtils isiPad]) {
         //there's no splash for phones in landscape mode!
         //so rotate the image:
         if([UIDevice currentDevice].orientation == UIDeviceOrientationLandscapeLeft) {
@@ -48,11 +46,11 @@
     UIInterfaceOrientation orientation =[[UIApplication sharedApplication] statusBarOrientation];
     CGSize viewSize = [self _getScreenSize];
     NSString* viewOrientation = @"Portrait";
-    if (UIDeviceOrientationIsLandscape(orientation) && [SysUtils isiPad]) {
+    if (UIDeviceOrientationIsLandscape(orientation) && [BPHSysUtils isiPad]) {
         viewSize = CGSizeMake(viewSize.height, viewSize.width);
         viewOrientation = @"Landscape";
     }
-    if(![SysUtils isiPad]) {
+    if(![BPHSysUtils isiPad]) {
         //enforce portrait image file name for phones, as they don't have a landscape image:
         viewSize = CGSizeMake(MIN(viewSize.width, viewSize.height), MAX(viewSize.width, viewSize.height));
     }
@@ -71,7 +69,7 @@
 }
 
 - (CGSize) _getScreenSize {
-    if([SysUtils isiOS:7.0] && ![SysUtils isiOS:8.0] && [SysUtils isLandscape]) {
+    if([BPHSysUtils isiOS:7.0] && ![BPHSysUtils isiOS:8.0] && [BPHSysUtils isLandscape]) {
         CGSize screenSize = [UIScreen mainScreen].bounds.size;
         return CGSizeMake(screenSize.height, screenSize.width);
     } else {
